@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import TimeDisplay from '../timer/TimeDisplay';
 import TimeCard from '../timer/TimeCard';
-import Reset from '../timer/Reset';
-
 
 const QuickStart = () => (
   <div className="container text-center">
@@ -20,13 +19,15 @@ const QuickStart = () => (
       </div>
     </div>
     <TimeCard time={10} unit="m" />
-    <div className="col-8 ml-auto mr-auto mt-5">
-      <div className="card mb-5">
-        <div className="card-body">
-          Now you can go to main page to see it going!
+    <Link to="/">
+      <div className="col-8 ml-auto mr-auto mt-5">
+        <div className="card mb-5">
+          <div className="card-body">
+            Click here to go to main page and see it going!
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   </div>
 );
 
