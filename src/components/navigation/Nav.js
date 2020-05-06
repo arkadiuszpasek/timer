@@ -6,7 +6,7 @@ const Nav = () => (
     <ul className="nav">
       <li className="nav-item">
         <Link className="nav-link" to="/">
-          Productive timer
+          <i className="far fa-clock fa-2x" />
         </Link>
       </li>
     </ul>
@@ -18,7 +18,7 @@ const Nav = () => (
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/settings">
-          Settings
+          <i className="fas fa-cogs fa-lg" />
         </Link>
       </li>
     </ul>

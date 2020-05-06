@@ -1,13 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Nav from './components/navigation/Nav';
 import Settings from './components/pages/Settings';
+import QuickStart from './components/pages/QuickStart';
 import Timer from './components/timer/Timer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Nav />
       <Switch>
         <Route path="/" exact>
@@ -16,8 +17,11 @@ function App() {
         <Route path="/settings">
           <Settings />
         </Route>
+        <Route path="/quick-start">
+          <QuickStart />
+        </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
