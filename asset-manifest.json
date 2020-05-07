@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/simple-timer/static/js/main.c3cb3c41.chunk.js",
-    "main.js.map": "/simple-timer/static/js/main.c3cb3c41.chunk.js.map",
+    "main.js": "/simple-timer/static/js/main.2195e8bc.chunk.js",
+    "main.js.map": "/simple-timer/static/js/main.2195e8bc.chunk.js.map",
     "runtime-main.js": "/simple-timer/static/js/runtime-main.e320f7b2.js",
     "runtime-main.js.map": "/simple-timer/static/js/runtime-main.e320f7b2.js.map",
     "static/js/2.a89e0c97.chunk.js": "/simple-timer/static/js/2.a89e0c97.chunk.js",
     "static/js/2.a89e0c97.chunk.js.map": "/simple-timer/static/js/2.a89e0c97.chunk.js.map",
     "index.html": "/simple-timer/index.html",
-    "precache-manifest.a26a2f44a4c58bc7ae896f712ccd6502.js": "/simple-timer/precache-manifest.a26a2f44a4c58bc7ae896f712ccd6502.js",
+    "precache-manifest.af869e2d2c0f3b3e23f87afa0d3b1b12.js": "/simple-timer/precache-manifest.af869e2d2c0f3b3e23f87afa0d3b1b12.js",
     "service-worker.js": "/simple-timer/service-worker.js",
     "static/js/2.a89e0c97.chunk.js.LICENSE.txt": "/simple-timer/static/js/2.a89e0c97.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e320f7b2.js",
     "static/js/2.a89e0c97.chunk.js",
-    "static/js/main.c3cb3c41.chunk.js"
+    "static/js/main.2195e8bc.chunk.js"
   ]
 }
