@@ -13,12 +13,12 @@ class Timer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { time, audio } = this.props;
+    const { time, audio: { sound } } = this.props;
     if (prevProps.time.hours === time.hours && 
       prevProps.time.minutes === time.minutes &&
       prevProps.time.seconds === time.seconds) return;
     if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
-      audio.play();
+      sound.play();
     }
   }
 

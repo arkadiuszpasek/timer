@@ -19,6 +19,7 @@ export const timeTick = () => ({
   type: TIME_TICK,
 });
 
-export const changeSound = (sound) => ({
+export const changeSound = (soundName) => ({
   type: SOUND_CHANGE,
+  payload: soundName,
 });
