@@ -2,24 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import history from '../../history';
 import { changeSound } from '../../actions/index';
 import { SOUNDS } from '../../reducers/audioReducer';
 
 class Settings extends React.Component {
-  onChange = () => {
-    console.log(this);
-    // history.push('/');
+  onFormChange = (e) => {
+    const { changeSound } = this.props;
+    changeSound(e.target.value);
+  }
+
+  onStore = () => {
+    const { audio: { name: soundName } } = this.props;
+    localStorage.setItem('sound', soundName);
   }
 
   renderOptions = () => Object.keys(SOUNDS).map((sound) => {
     const { fullName: soundName } = SOUNDS[sound];
-    const { changeSound } = this.props;
     return (
       <option
         key={soundName}
         value={sound}
-        onClick={() => changeSound(sound)}
       >
         {soundName}
       </option>
@@ -27,13 +29,42 @@ class Settings extends React.Component {
   })
 
   renderSoundList = () => {
-    const { audio: { name: soundName } } = this.props;
+    const { audio: { name: soundName, sound } } = this.props;
     return (
       <div className="form-group">
         <label>Finish sound</label>
-        <select className="form-control" defaultValue={soundName}>
+        <Field
+          name="soundSelect"
+          component="select"
+          onChange={this.onFormChange}
+          className="form-control"
+        >
           {this.renderOptions()}
-        </select>
+        </Field>
+        <div>
+          <button
+            type="button"
+            className="btn btn-primary mt-2"
+            onClick={() => sound.play()}
+          >
+            Play sound
+          </button>
+        </div>
+        <label className="mt-5 text-muted text-small">
+          <small>
+            Changes are remembered dynamically for the current session,
+            while hitting 'Store' will save them in your browser storage.
+          </small>
+        </label>
+        <div className="form-group text-right">
+          <button
+            type="button"
+            className="btn btn-success mr-3 pt-2 pb-2 pl-5 pr-5"
+            onClick={this.onStore}
+          >
+            Store
+          </button>
+        </div>
       </div>
     );
   }
@@ -45,7 +76,7 @@ class Settings extends React.Component {
           <h5 className="modal-title">Settings</h5>
         </div>
         <div className="modal-body">
-          <form>
+          <form onSubmit={this.onSubmit}>
             {this.renderSoundList()}
           </form>
         </div>
@@ -59,12 +90,18 @@ class Settings extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({ audio: state.audio });
+const mapStateToProps = (state) => ({
+  audio: state.audio,
+  initialValues: {
+    soundSelect: localStorage.getItem('sound')
+      ? localStorage.getItem('sound') : state.audio.name,
+  },
+});
 
-const formComponent = reduxForm({
+const form = reduxForm({
   form: 'settings',
 })(Settings);
 
 export default connect(mapStateToProps, {
   changeSound,
-})(formComponent);
+})(form);

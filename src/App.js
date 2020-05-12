@@ -5,11 +5,10 @@ import Nav from './components/navigation/Nav';
 import Settings from './components/pages/Settings';
 import QuickStart from './components/pages/QuickStart';
 import Timer from './components/timer/Timer';
-import history from './history';
 
 function App() {
   return (
-    <HashRouter history={history}>
+    <HashRouter basename="/">
       <Nav />
       <Switch>
         <Route path="/" exact>

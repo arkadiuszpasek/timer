@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
+import { reducer as settingsFormReducer } from 'redux-form';
 
 import timeReducer from './timeReducer';
 import audioReducer from './audioReducer';
-import settingsFormReducer from './settingsFormReducer';
 
 export default combineReducers({
   time: timeReducer,
   audio: audioReducer,
-  settingsForm: settingsFormReducer,
+  form: settingsFormReducer,
 });
