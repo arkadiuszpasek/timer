@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/simple-timer/static/js/main.3b76205f.chunk.js",
-    "main.js.map": "/simple-timer/static/js/main.3b76205f.chunk.js.map",
+    "main.js": "/simple-timer/static/js/main.d4f09dd9.chunk.js",
+    "main.js.map": "/simple-timer/static/js/main.d4f09dd9.chunk.js.map",
     "runtime-main.js": "/simple-timer/static/js/runtime-main.e320f7b2.js",
     "runtime-main.js.map": "/simple-timer/static/js/runtime-main.e320f7b2.js.map",
-    "static/js/2.ad705109.chunk.js": "/simple-timer/static/js/2.ad705109.chunk.js",
-    "static/js/2.ad705109.chunk.js.map": "/simple-timer/static/js/2.ad705109.chunk.js.map",
+    "static/js/2.e496b0c9.chunk.js": "/simple-timer/static/js/2.e496b0c9.chunk.js",
+    "static/js/2.e496b0c9.chunk.js.map": "/simple-timer/static/js/2.e496b0c9.chunk.js.map",
     "index.html": "/simple-timer/index.html",
-    "precache-manifest.000e21228c17c60bc639ad7b7e1fc3dc.js": "/simple-timer/precache-manifest.000e21228c17c60bc639ad7b7e1fc3dc.js",
+    "precache-manifest.634e965ec9cb2e8960fc25131c5fb9ef.js": "/simple-timer/precache-manifest.634e965ec9cb2e8960fc25131c5fb9ef.js",
     "service-worker.js": "/simple-timer/service-worker.js",
-    "static/js/2.ad705109.chunk.js.LICENSE.txt": "/simple-timer/static/js/2.ad705109.chunk.js.LICENSE.txt"
+    "static/js/2.e496b0c9.chunk.js.LICENSE.txt": "/simple-timer/static/js/2.e496b0c9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e320f7b2.js",
-    "static/js/2.ad705109.chunk.js",
-    "static/js/main.3b76205f.chunk.js"
+    "static/js/2.e496b0c9.chunk.js",
+    "static/js/main.d4f09dd9.chunk.js"
   ]
 }
