@@ -17,14 +17,16 @@ const INITIAL_AUDIO = {
   sound: new Audio(SOUNDS.ding.url),
 };
 
+const constructAudioObject = (name) => ({
+  name,
+  sound: new Audio(SOUNDS[name].url),
+  fullName: SOUNDS[name].fullName,
+});
+
 export default (state = INITIAL_AUDIO, action) => {
   switch (action.type) {
     case SOUND_CHANGE:
-      return {
-        name: action.payload,
-        fullName: SOUNDS[action.payload].fullName,
-        sound: new Audio(SOUNDS[action.payload].url),
-      };
+      return constructAudioObject(action.payload);
     default:
       return state;
   }

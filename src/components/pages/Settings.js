@@ -93,8 +93,7 @@ class Settings extends React.Component {
 const mapStateToProps = (state) => ({
   audio: state.audio,
   initialValues: {
-    soundSelect: localStorage.getItem('sound')
-      ? localStorage.getItem('sound') : state.audio.name,
+    soundSelect: state.audio.name,
   },
 });
 
