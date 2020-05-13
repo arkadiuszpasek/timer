@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import TimeDisplay from './TimeDisplay';
 import TimesGrid from './TimesGrid';
@@ -14,9 +15,11 @@ class Timer extends React.Component {
 
   componentDidUpdate(prevProps) {
     const { time, audio: { sound } } = this.props;
-    if (prevProps.time.hours === time.hours && 
-      prevProps.time.minutes === time.minutes &&
-      prevProps.time.seconds === time.seconds) return;
+
+    if (prevProps.time.hours === time.hours
+      && prevProps.time.minutes === time.minutes
+      && prevProps.time.seconds === time.seconds) return;
+
     if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
       sound.play();
     }
@@ -37,6 +40,12 @@ class Timer extends React.Component {
     );
   }
 }
+
+Timer.propTypes = {
+  time: PropTypes.objectOf(PropTypes.any).isRequired,
+  audio: PropTypes.objectOf(PropTypes.any).isRequired,
+  timeTick: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   time: state.time,

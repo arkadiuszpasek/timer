@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { changeSound } from '../../actions/index';
 import { SOUNDS } from '../../reducers/audioReducer';
+import { LOCALSTORAGE } from '../../configurations';
 
 class Settings extends React.Component {
   onFormChange = (e) => {
@@ -13,7 +15,7 @@ class Settings extends React.Component {
 
   onStore = () => {
     const { audio: { name: soundName } } = this.props;
-    localStorage.setItem('sound', soundName);
+    localStorage.setItem(LOCALSTORAGE.sound, soundName);
   }
 
   renderOptions = () => Object.keys(SOUNDS).map((sound) => {
@@ -29,15 +31,16 @@ class Settings extends React.Component {
   })
 
   renderSoundList = () => {
-    const { audio: { name: soundName, sound } } = this.props;
+    const { audio: { sound }, initialValues: { soundSelect } } = this.props;
     return (
       <div className="form-group">
-        <label>Finish sound</label>
+        <p>Finish sound</p>
         <Field
           name="soundSelect"
           component="select"
           onChange={this.onFormChange}
           className="form-control"
+          value={soundSelect}
         >
           {this.renderOptions()}
         </Field>
@@ -50,12 +53,12 @@ class Settings extends React.Component {
             Play sound
           </button>
         </div>
-        <label className="mt-5 text-muted text-small">
+        <p className="mt-5 text-muted text-small">
           <small>
             Changes are remembered dynamically for the current session,
-            while hitting 'Store' will save them in your browser storage.
+            while hitting &apos;Store&apos; will save them in your browser storage.
           </small>
-        </label>
+        </p>
         <div className="form-group text-right">
           <button
             type="button"
@@ -89,6 +92,12 @@ class Settings extends React.Component {
       document.querySelector('#modal'));
   }
 }
+
+Settings.propTypes = {
+  audio: PropTypes.objectOf(PropTypes.any).isRequired,
+  initialValues: PropTypes.objectOf(PropTypes.any).isRequired,
+  changeSound: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   audio: state.audio,

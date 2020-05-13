@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { renderTime } from './timeLogic';
 
@@ -16,8 +15,10 @@ class TimeDisplay extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return ({ time: state.time });
+TimeDisplay.propTypes = {
+  time: PropTypes.objectOf(PropTypes.any).isRequired,
 };
+
+const mapStateToProps = (state) => ({ time: state.time });
 
 export default connect(mapStateToProps)(TimeDisplay);

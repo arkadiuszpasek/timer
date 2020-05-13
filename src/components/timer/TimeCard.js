@@ -1,9 +1,6 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-shadow */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { addTime } from '../../actions';
 
 class TimeCard extends React.Component {
@@ -15,7 +12,6 @@ class TimeCard extends React.Component {
       seconds: 0,
     };
 
-    // eslint-disable-next-line default-case
     switch (unit) {
       case 'h':
         timeState.hours = time;
@@ -25,6 +21,8 @@ class TimeCard extends React.Component {
         break;
       case 's':
         timeState.seconds = time;
+        break;
+      default:
         break;
     }
 
@@ -37,6 +35,9 @@ class TimeCard extends React.Component {
       <div
         className="col-3 ml-auto mr-auto bg-secondary btn"
         onClick={() => addTime(this.constructTimeAction())}
+        onKeyDown={() => addTime(this.constructTimeAction())}
+        tabIndex="0"
+        role="button"
       >
         <h2 className="pt-3 pb-1">
           {time}
@@ -46,6 +47,12 @@ class TimeCard extends React.Component {
     );
   }
 }
+
+TimeCard.propTypes = {
+  time: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  addTime: PropTypes.func.isRequired,
+};
 
 export default connect(null, {
   addTime,
