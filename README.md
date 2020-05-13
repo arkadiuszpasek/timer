@@ -8,7 +8,7 @@ You can check it [here](https://arkadiuszpasek.github.io/simple-timer/#/)
 
 ## What's installed:
 - Lodash - for object manipulation
-- React, React-redux, React-Router
+- React, React-redux, React-Router, react-form
 - Eslint
 
 ### :)
