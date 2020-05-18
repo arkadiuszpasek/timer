@@ -14,10 +14,10 @@ describe('Application tests', () => {
   });
 
   it('renders correctly', () => {
-    const ProviderApp = shallow(
+    shallow(
       <Provider store={store}>
         <App />
-      </Provider>
+      </Provider>,
     );
   });
 });
