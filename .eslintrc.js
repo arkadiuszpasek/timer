@@ -3,11 +3,9 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -20,12 +18,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
-    "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": "off",
-    "no-shadow": "off"
+    'react/jsx-filename-extension': 'off',
+    'react/prefer-stateless-function': 'off',
+    'no-shadow': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };
