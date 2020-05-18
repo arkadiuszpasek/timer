@@ -13,7 +13,7 @@ You can check it [here](https://arkadiuszpasek.github.io/simple-timer/#/)
 
 - Lodash - for object manipulation
 - React, React-redux, React-Router, react-form
-- jest, enzyme enzyme-adapter-react-16 react-test-renderer - for testing purposes
+- jest, enzyme enzyme-adapter-react-16, react-test-renderer, jest-localstorage-mock - for testing purposes
 - Eslint
 
 ### :)

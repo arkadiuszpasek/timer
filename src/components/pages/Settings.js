@@ -8,37 +8,40 @@ import { SOUNDS } from '../../reducers/audioReducer';
 import { LOCALSTORAGE } from '../../configurations';
 
 class Settings extends React.Component {
-  onFormChange = (e) => {
+  onSoundSelectChange = (e) => {
     const { changeSound } = this.props;
     changeSound(e.target.value);
-  }
+  };
 
   onStore = () => {
-    const { audio: { name: soundName } } = this.props;
+    const {
+      audio: { name: soundName },
+    } = this.props;
     localStorage.setItem(LOCALSTORAGE.sound, soundName);
-  }
+  };
 
-  renderOptions = () => Object.keys(SOUNDS).map((sound) => {
-    const { fullName: soundName } = SOUNDS[sound];
-    return (
-      <option
-        key={soundName}
-        value={sound}
-      >
-        {soundName}
-      </option>
-    );
-  })
+  renderOptions = () =>
+    Object.keys(SOUNDS).map((sound) => {
+      const { fullName: soundName } = SOUNDS[sound];
+      return (
+        <option key={soundName} value={sound}>
+          {soundName}
+        </option>
+      );
+    });
 
   renderSoundList = () => {
-    const { audio: { sound }, initialValues: { soundSelect } } = this.props;
+    const {
+      audio: { sound },
+      initialValues: { soundSelect },
+    } = this.props;
     return (
       <div className="form-group">
         <p>Finish sound</p>
         <Field
           name="soundSelect"
           component="select"
-          onChange={this.onFormChange}
+          onChange={this.onSoundSelectChange}
           className="form-control"
           value={soundSelect}
         >
@@ -55,8 +58,8 @@ class Settings extends React.Component {
         </div>
         <p className="mt-5 text-muted text-small">
           <small>
-            Changes are remembered dynamically for the current session,
-            while hitting &apos;Store&apos; will save them in your browser storage.
+            Changes are remembered dynamically for the current session, while
+            hitting &apos;Store&apos; will save them in your browser storage.
           </small>
         </p>
         <div className="form-group text-right">
@@ -70,7 +73,7 @@ class Settings extends React.Component {
         </div>
       </div>
     );
-  }
+  };
 
   renderModal = () => (
     <div className="modal-dialog">
@@ -79,17 +82,17 @@ class Settings extends React.Component {
           <h5 className="modal-title">Settings</h5>
         </div>
         <div className="modal-body">
-          <form onSubmit={this.onSubmit}>
-            {this.renderSoundList()}
-          </form>
+          <form onSubmit={this.onSubmit}>{this.renderSoundList()}</form>
         </div>
       </div>
     </div>
   );
 
   render() {
-    return ReactDOM.createPortal(this.renderModal(),
-      document.querySelector('#modal'));
+    return ReactDOM.createPortal(
+      this.renderModal(),
+      document.querySelector('#modal'),
+    );
   }
 }
 

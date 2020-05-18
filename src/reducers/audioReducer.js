@@ -2,11 +2,13 @@ import { SOUND_CHANGE } from '../actions/types';
 
 export const SOUNDS = {
   ding: {
-    url: 'https://raw.githubusercontent.com/arkadiuszpasek/simple-timer/master/res/ding.mp3',
+    url:
+      'https://raw.githubusercontent.com/arkadiuszpasek/simple-timer/master/res/ding.mp3',
     fullName: 'Gentle Bell',
   },
   w3: {
-    url: 'https://raw.githubusercontent.com/arkadiuszpasek/Online-Youtube-Timer/master/res/w3QuestSound.mp3',
+    url:
+      'https://raw.githubusercontent.com/arkadiuszpasek/Online-Youtube-Timer/master/res/w3QuestSound.mp3',
     fullName: 'Witcher Quest Sound',
   },
 };

@@ -24,5 +24,6 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'no-shadow': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'implicit-arrow-linebreak': 'off',
   },
 };

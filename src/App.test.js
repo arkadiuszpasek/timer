@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import { createAppStore } from './setupTests';
 import App from './App';
-import reducers from './reducers/index';
 
 describe('Application tests', () => {
   let store;
 
   beforeAll(() => {
-    store = createStore(reducers);
+    store = createAppStore();
   });
 
   it('renders correctly', () => {
