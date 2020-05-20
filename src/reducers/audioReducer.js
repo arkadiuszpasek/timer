@@ -9,7 +9,7 @@ export const SOUNDS = {
   w3: {
     url:
       'https://raw.githubusercontent.com/arkadiuszpasek/Online-Youtube-Timer/master/res/w3QuestSound.mp3',
-    fullName: 'Witcher Quest Sound',
+    fullName: 'Witcher 3 Quest Sound',
   },
 };
 
