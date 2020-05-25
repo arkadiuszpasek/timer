@@ -2,7 +2,7 @@
 
 ### The timer was designed to allow super quick and easy time measuring
 
-You can check it [here](https://arkadiuszpasek.github.io/simple-timer/#/)
+You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 
 ## How to run this project:
 
