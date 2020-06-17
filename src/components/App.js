@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import Nav from './components/navigation/Nav';
-import Settings from './components/pages/Settings';
-import QuickStart from './components/pages/QuickStart';
-import Timer from './components/timer/Timer';
-import { changeSound } from './actions/index';
-import { LOCALSTORAGE } from './configurations';
+import Nav from './navigation/Nav';
+import Settings from './pages/Settings';
+import QuickStart from './pages/QuickStart';
+import Timer from './timer/Timer';
+import { changeSound } from '../actions';
+import { LOCALSTORAGE } from '../configs';
+
+import '../styles/initials.scss';
 
 const App = () => {
   const dispatch = useDispatch();

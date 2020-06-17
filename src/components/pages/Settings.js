@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { changeSound } from '../../actions/index';
 import { SOUNDS } from '../../reducers/audioReducer';
-import { LOCALSTORAGE } from '../../configurations';
+import { LOCALSTORAGE } from '../../configs';
 
 class Settings extends React.Component {
   onSoundSelectChange = (e) => {
