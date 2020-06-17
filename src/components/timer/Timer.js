@@ -7,6 +7,8 @@ import TimesGrid from './TimesGrid';
 import Reset from './Reset';
 import { timeTick } from '../../actions';
 
+import './Timer.scss';
+
 class Timer extends React.Component {
   componentDidMount() {
     const { timeTick } = this.props;
@@ -14,11 +16,17 @@ class Timer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { time, audio: { sound } } = this.props;
+    const {
+      time,
+      audio: { sound },
+    } = this.props;
 
-    if (prevProps.time.hours === time.hours
-      && prevProps.time.minutes === time.minutes
-      && prevProps.time.seconds === time.seconds) return;
+    if (
+      prevProps.time.hours === time.hours &&
+      prevProps.time.minutes === time.minutes &&
+      prevProps.time.seconds === time.seconds
+    )
+      return;
 
     if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
       sound.play();
@@ -28,7 +36,6 @@ class Timer extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-
 
   render() {
     return (

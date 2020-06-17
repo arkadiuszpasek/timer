@@ -9,7 +9,7 @@ import Timer from './timer/Timer';
 import { changeSound } from '../actions';
 import { LOCALSTORAGE } from '../configs';
 
-import '../styles/initials.scss';
+import './App.scss';
 
 const App = () => {
   const dispatch = useDispatch();

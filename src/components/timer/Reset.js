@@ -8,11 +8,11 @@ class Reset extends React.Component {
   render() {
     const { resetTime } = this.props;
     return (
-      <div className="row mb-5">
+      <div className="">
         <div
           role="button"
           tabIndex="0"
-          className="col-6 ml-auto btn mr-auto bg-primary"
+          className="btn btn-secondary"
           onClick={() => resetTime()}
           onKeyDown={() => resetTime()}
         >

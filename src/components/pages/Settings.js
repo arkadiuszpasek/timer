@@ -7,6 +7,8 @@ import { changeSound } from '../../actions/index';
 import { SOUNDS } from '../../reducers/audioReducer';
 import { LOCALSTORAGE } from '../../configs';
 
+import './Settings.scss';
+
 class Settings extends React.Component {
   onSoundSelectChange = (e) => {
     const { changeSound } = this.props;
@@ -37,12 +39,12 @@ class Settings extends React.Component {
     } = this.props;
     return (
       <div className="form-group">
-        <p>Finish sound</p>
+        <p className="form-control form-label">Finish sound</p>
         <Field
           name="soundSelect"
           component="select"
           onChange={this.onSoundSelectChange}
-          className="form-control"
+          className="form-control select"
           value={soundSelect}
         >
           {this.renderOptions()}
@@ -50,13 +52,13 @@ class Settings extends React.Component {
         <div>
           <button
             type="button"
-            className="btn btn-primary mt-2"
+            className="btn btn-primary form-control"
             onClick={() => sound.play()}
           >
             Play sound
           </button>
         </div>
-        <p className="mt-5 text-muted text-small">
+        <p className="form-control">
           <small>
             Changes are remembered dynamically for the current session, while
             hitting &apos;Store&apos; will save them in your browser storage.
@@ -65,7 +67,7 @@ class Settings extends React.Component {
         <div className="form-group text-right">
           <button
             type="button"
-            className="btn btn-success mr-3 pt-2 pb-2 pl-5 pr-5"
+            className="btn btn-dark form-control"
             onClick={this.onStore}
           >
             Store
@@ -78,9 +80,6 @@ class Settings extends React.Component {
   renderModal = () => (
     <div className="modal-dialog">
       <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Settings</h5>
-        </div>
         <div className="modal-body">
           <form onSubmit={this.onSubmit}>{this.renderSoundList()}</form>
         </div>

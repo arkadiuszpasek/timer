@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './Nav.scss';
+
 const Nav = () => (
-  <nav className="navbar bg-secondary">
-    <ul className="nav">
-      <li className="nav-item">
-        <Link className="nav-link" to="/">
-          <i className="far fa-clock fa-2x" />
+  <nav className="nav">
+    <ul>
+      <li>
+        <Link to="/">
+          <i className="far fa-clock" />
         </Link>
       </li>
     </ul>
-    <ul className="nav">
-      <li className="nav-item">
-        <Link className="nav-link" to="/quick-start">
-          Quick Start
-        </Link>
+    <ul>
+      <li>
+        <Link to="/quick-start">Quick Start</Link>
       </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/settings">
-          <i className="fas fa-cogs fa-lg" />
+      <li>
+        <Link to="/settings">
+          <i className="fas fa-cogs" />
         </Link>
       </li>
     </ul>

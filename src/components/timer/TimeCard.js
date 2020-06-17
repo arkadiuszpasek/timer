@@ -27,19 +27,19 @@ class TimeCard extends React.Component {
     }
 
     return timeState;
-  }
+  };
 
   render() {
     const { time, unit, addTime } = this.props;
     return (
       <div
-        className="col-3 ml-auto mr-auto bg-secondary btn"
+        className="card btn"
         onClick={() => addTime(this.constructTimeAction())}
         onKeyDown={() => addTime(this.constructTimeAction())}
         tabIndex="0"
         role="button"
       >
-        <h2 className="pt-3 pb-1">
+        <h2>
           {time}
           {unit}
         </h2>

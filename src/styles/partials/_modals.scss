@@ -1,0 +1,76 @@
+@import '../vars';
+
+.modal-dialog {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: (translate(-50%, -50%));
+
+  padding: 2rem;
+
+  &::before {
+    content: '';
+    background-color: rgba($primary-light, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(5px);
+    z-index: -5;
+  }
+}
+
+.form-label {
+  font-size: $font-big;
+}
+
+.form-control {
+  border: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.select {
+  border-radius: 5px;
+  width: 50%;
+  background-color: $dark-gray;
+  cursor: pointer;
+  appearance: none;
+  line-height: 1.7;
+
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: $font-large;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  transition: 0.1s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.btn-primary {
+  background-color: $dark-gray;
+}
+
+.btn-secondary {
+  background-color: $primary-color;
+}
+
+.btn-dark {
+  background-color: $primary-dark;
+}
