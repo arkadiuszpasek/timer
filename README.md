@@ -2,6 +2,8 @@
 
 ### The timer was designed to allow super quick and easy time measuring
 
+#### It uses unsplash api, so that you get a random background every time!
+
 You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 
 ## How to run this project:
@@ -15,5 +17,6 @@ You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 - React, React-redux, React-Router, react-form
 - jest, enzyme enzyme-adapter-react-16, react-test-renderer, jest-localstorage-mock - for testing purposes
 - Eslint
+- node-sass
 
 ### :)
