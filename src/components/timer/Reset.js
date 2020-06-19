@@ -8,16 +8,14 @@ class Reset extends React.Component {
   render() {
     const { resetTime } = this.props;
     return (
-      <div className="">
-        <div
-          role="button"
-          tabIndex="0"
-          className="btn btn-secondary"
-          onClick={() => resetTime()}
-          onKeyDown={() => resetTime()}
-        >
-          <h1 className="pt-2">Reset</h1>
-        </div>
+      <div
+        role="button"
+        tabIndex="0"
+        className="btn btn-secondary wide-btn"
+        onClick={() => resetTime()}
+        onKeyDown={() => resetTime()}
+      >
+        <h1 className="pt-2">Reset</h1>
       </div>
     );
   }

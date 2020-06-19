@@ -1,6 +1,6 @@
 {
-  "homepage": "https://arkadiuszpasek.github.io/simple-timer",
-  "name": "simple-timer",
+  "homepage": "https://arkadiuszpasek.github.io/timer",
+  "name": "timer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

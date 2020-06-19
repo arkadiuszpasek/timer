@@ -5,8 +5,12 @@ class TimesGrid extends React.Component {
   render() {
     return (
       <div className="grid mt mb">
+        <TimeCard time={5} unit="h" />
+        <TimeCard time={2} unit="h" />
         <TimeCard time={1} unit="h" />
+
         <TimeCard time={30} unit="m" />
+        <TimeCard time={15} unit="m" />
         <TimeCard time={10} unit="m" />
 
         <TimeCard time={5} unit="m" />

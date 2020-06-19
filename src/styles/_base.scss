@@ -42,8 +42,15 @@ a {
   margin-top: 1rem;
 }
 
+.mt-big {
+  margin-top: 2.5rem;
+}
+
 .mb {
   margin-bottom: 1rem;
+}
+.mb-big {
+  margin-bottom: 2.5rem;
 }
 
 .container {
@@ -55,9 +62,13 @@ a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px 50px;
   justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media all and (min-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .text-center {
