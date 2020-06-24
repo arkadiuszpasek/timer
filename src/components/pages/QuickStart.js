@@ -10,13 +10,13 @@ const QuickStart = () => (
   <div className="container text-center">
     <TimeDisplay />
     <div className="quickstart-flex mt mb">
-      <h3>
+      <p>
         The timer is stopped on this page, but normally it is always on.
         <br />
         By clicking time cards you add time to it.
         <br />
         Try clicking this 10 minute card twice to set the timer for 20 minutes!
-      </h3>
+      </p>
       <TimeCard time={10} unit="m" />
     </div>
     <Link to="/">

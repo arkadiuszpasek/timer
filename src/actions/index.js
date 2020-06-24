@@ -18,3 +18,12 @@ export const changeSound = (soundName) => ({
   type: types.SOUND_CHANGE,
   payload: soundName,
 });
+
+export const toggleTheme = () => ({
+  type: types.THEME_TOGGLE,
+});
+
+export const setTheme = (theme) => ({
+  type: types.THEME_CHANGE,
+  payload: theme,
+});

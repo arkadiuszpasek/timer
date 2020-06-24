@@ -22,7 +22,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $primary-light;
     z-index: 1;
   }
 
@@ -39,10 +38,6 @@
 
       * {
         transition: all 0.5s ease;
-      }
-
-      *:hover {
-        color: $primary-light;
       }
     }
   }

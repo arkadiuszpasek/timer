@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { changeSound } from '../../actions/index';
+import { changeSound, toggleTheme } from '../../actions/index';
 import { SOUNDS } from '../../reducers/audioReducer';
 import { LOCALSTORAGE } from '../../configs';
 
@@ -15,18 +15,31 @@ class Settings extends React.Component {
     changeSound(e.target.value);
   };
 
+  onToggleThemeClick = () => {
+    const { toggleTheme } = this.props;
+    toggleTheme();
+  };
+
   onStore = () => {
     const {
       audio: { name: soundName },
+      theme,
     } = this.props;
     localStorage.setItem(LOCALSTORAGE.sound, soundName);
+    localStorage.setItem(LOCALSTORAGE.theme.key, theme);
   };
 
   renderOptions = () =>
     Object.keys(SOUNDS).map((sound) => {
       const { fullName: soundName } = SOUNDS[sound];
+      // console.log(selectedSound, sound, selectedSound === sound);
       return (
-        <option key={soundName} value={sound}>
+        <option
+          key={sound}
+          value={sound}
+          // autoComplete="off"
+          // selected={selectedSound === sound}
+        >
           {soundName}
         </option>
       );
@@ -35,17 +48,19 @@ class Settings extends React.Component {
   renderSoundList = () => {
     const {
       audio: { sound },
-      initialValues: { soundSelect },
+      // initialValues: { stateSound: selectedSound },
     } = this.props;
+    // console.log(selectedSound);
     return (
-      <div className="form-group">
+      <div>
         <p className="form-control form-label">Finish sound</p>
         <Field
           name="soundSelect"
           component="select"
+          // autoComplete="off"
           onChange={this.onSoundSelectChange}
           className="form-control select"
-          value={soundSelect}
+          // value={selectedSound}
         >
           {this.renderOptions()}
         </Field>
@@ -58,6 +73,34 @@ class Settings extends React.Component {
             Play sound
           </button>
         </div>
+      </div>
+    );
+  };
+
+  renderToggleThemeButton() {
+    const { theme } = this.props;
+    const checked = theme === LOCALSTORAGE.theme.dark;
+
+    return (
+      <div className="form-control">
+        <p>Use dark theme</p>
+        <label className="switch">
+          <input type="checkbox" checked={checked} readOnly />
+          <span
+            role="button"
+            tabIndex={0}
+            className="slider"
+            onClick={this.onToggleThemeClick}
+            onKeyDown={this.onToggleThemeClick}
+          />
+        </label>
+      </div>
+    );
+  }
+
+  renderSaving() {
+    return (
+      <div>
         <p className="form-control">
           <small>
             Changes are remembered dynamically for the current session, while
@@ -75,13 +118,17 @@ class Settings extends React.Component {
         </div>
       </div>
     );
-  };
+  }
 
   renderModal = () => (
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-body">
-          <form onSubmit={this.onSubmit}>{this.renderSoundList()}</form>
+          <form onSubmit={this.onSubmit}>
+            {this.renderSoundList()}
+            {this.renderToggleThemeButton()}
+            {this.renderSaving()}
+          </form>
         </div>
       </div>
     </div>
@@ -97,16 +144,22 @@ class Settings extends React.Component {
 
 Settings.propTypes = {
   audio: PropTypes.objectOf(PropTypes.any).isRequired,
-  initialValues: PropTypes.objectOf(PropTypes.any).isRequired,
+  theme: PropTypes.string.isRequired,
   changeSound: PropTypes.func.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  audio: state.audio,
-  initialValues: {
-    soundSelect: state.audio.name,
-  },
-});
+const mapStateToProps = (state) => {
+  const storedSound = localStorage.getItem(LOCALSTORAGE.sound);
+
+  return {
+    audio: state.audio,
+    theme: state.theme,
+    initialValues: {
+      soundSelect: storedSound || state.audio.name,
+    },
+  };
+};
 
 const form = reduxForm({
   form: 'settings',
@@ -114,4 +167,5 @@ const form = reduxForm({
 
 export default connect(mapStateToProps, {
   changeSound,
+  toggleTheme,
 })(form);

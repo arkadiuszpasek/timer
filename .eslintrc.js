@@ -25,5 +25,7 @@ module.exports = {
     'no-shadow': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'implicit-arrow-linebreak': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
   },
 };

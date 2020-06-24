@@ -3,25 +3,24 @@
 
 .modal-dialog {
   @include shadow();
-  border-radius: 2px;
+
+  padding: 2rem;
   min-width: 350px;
+  text-align: center;
+  border-radius: 2px;
 
   position: absolute;
   top: 40%;
   left: 50%;
   transform: (translate(-50%, -50%));
-  text-align: center;
 
   @media (min-width: 768px) {
     top: 35%;
     text-align: left;
   }
 
-  padding: 2rem;
-
   &::before {
     content: '';
-    background-color: $primary-light;
     position: absolute;
     top: 0;
     left: 0;
@@ -36,6 +35,8 @@
   padding: 0.5rem;
   margin: 0.5rem 0;
   color: white;
+  display: flex;
+  align-items: center;
 
   @media (min-width: 768px) {
     margin: 0.5rem;
@@ -44,7 +45,6 @@
 
 .form-label {
   font-size: $font-big;
-  color: black;
 }
 
 .select {
@@ -79,7 +79,7 @@
   font-size: $font-large;
   border: none;
   padding: 0.25rem 0.75rem;
-  transition: 0.1s ease;
+  transition: 0.1s ease-in-out;
   cursor: pointer;
   margin-bottom: 1rem;
 
@@ -88,14 +88,53 @@
   }
 }
 
-.btn-primary {
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 0.7rem;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: $dark-gray;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 5px;
 }
 
-.btn-secondary {
-  background-color: $primary-light;
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
-.btn-dark {
-  background-color: $primary-dark;
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
