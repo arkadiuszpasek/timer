@@ -8,11 +8,11 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
-#bg {
-  position: absolute;
+body::before {
+  content: '';
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

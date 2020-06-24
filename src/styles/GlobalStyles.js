@@ -35,7 +35,7 @@ export default createGlobalStyle`
   html {
     color: ${({ theme }) => theme.color};
   }
-  #bg {
+  body::before {
     background-color: ${({ theme }) => theme.background};
   }
 
