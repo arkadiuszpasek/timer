@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 
 import { createAppStore } from '../../setupTests';
 import Settings from './Settings';
-import { changeSound } from '../../actions';
-import { LOCALSTORAGE } from '../../configurations';
+import { changeSound, setTheme } from '../../actions';
+import { LOCALSTORAGE } from '../../configs';
 
 describe('Settings tests', () => {
   const store = createAppStore();
@@ -35,6 +35,11 @@ describe('Settings tests', () => {
       LOCALSTORAGE.sound,
       store.getState().audio.name,
     );
+
+    expect(localStorage.setItem).toHaveBeenCalledWith(
+      LOCALSTORAGE.theme.key,
+      store.getState().theme,
+    );
   });
 
   it('Changes state audio after change in select element', () => {
@@ -47,5 +52,20 @@ describe('Settings tests', () => {
       .simulate('change', { target: { value: changedSound } });
 
     expect(store.getState().audio.name).toBe(changedSound);
+  });
+
+  it('Toggles use dark theme after click', () => {
+    store.dispatch(setTheme('dark'));
+
+    expect(
+      settingsComponent.find('.switch').find('input').prop('checked'),
+    ).toBeTruthy();
+    expect(store.getState().theme).toBe('dark');
+
+    settingsComponent.find('.switch').find('span').simulate('click');
+    expect(
+      settingsComponent.find('.switch').find('input').prop('checked'),
+    ).toBeFalsy();
+    expect(store.getState().theme).toBe('light');
   });
 });

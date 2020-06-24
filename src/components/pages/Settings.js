@@ -32,14 +32,9 @@ class Settings extends React.Component {
   renderOptions = () =>
     Object.keys(SOUNDS).map((sound) => {
       const { fullName: soundName } = SOUNDS[sound];
-      // console.log(selectedSound, sound, selectedSound === sound);
+
       return (
-        <option
-          key={sound}
-          value={sound}
-          // autoComplete="off"
-          // selected={selectedSound === sound}
-        >
+        <option key={sound} value={sound}>
           {soundName}
         </option>
       );
@@ -48,19 +43,16 @@ class Settings extends React.Component {
   renderSoundList = () => {
     const {
       audio: { sound },
-      // initialValues: { stateSound: selectedSound },
     } = this.props;
-    // console.log(selectedSound);
+
     return (
       <div>
         <p className="form-control form-label">Finish sound</p>
         <Field
           name="soundSelect"
           component="select"
-          // autoComplete="off"
           onChange={this.onSoundSelectChange}
           className="form-control select"
-          // value={selectedSound}
         >
           {this.renderOptions()}
         </Field>
