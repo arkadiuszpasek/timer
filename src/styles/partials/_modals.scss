@@ -1,40 +1,61 @@
 @import '../vars';
+@import '../partials/partials';
 
 .modal-dialog {
+  @include shadow();
+  border-radius: 2px;
+  min-width: 350px;
+
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: (translate(-50%, -50%));
+  text-align: center;
+
+  @media (min-width: 768px) {
+    top: 35%;
+    text-align: left;
+  }
 
   padding: 2rem;
 
   &::before {
     content: '';
-    background-color: rgba($primary-light, 0.5);
+    background-color: $primary-light;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    filter: blur(5px);
     z-index: -5;
   }
-}
-
-.form-label {
-  font-size: $font-big;
 }
 
 .form-control {
   border: none;
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
+  color: white;
+
+  @media (min-width: 768px) {
+    margin: 0.5rem;
+  }
+}
+
+.form-label {
+  font-size: $font-big;
+  color: black;
 }
 
 .select {
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
+  max-width: 300px;
   background-color: $dark-gray;
+  color: white;
+  * {
+    color: white;
+  }
   cursor: pointer;
   appearance: none;
   line-height: 1.7;
@@ -51,12 +72,16 @@
 }
 
 .btn {
-  border-radius: 5px;
+  @include shadow();
+  @include shadow_hover();
+
+  border-radius: 2px;
   font-size: $font-large;
   border: none;
   padding: 0.25rem 0.75rem;
   transition: 0.1s ease;
   cursor: pointer;
+  margin-bottom: 1rem;
 
   &:hover {
     transform: scale(1.02);
@@ -68,7 +93,7 @@
 }
 
 .btn-secondary {
-  background-color: $primary-color;
+  background-color: $primary-light;
 }
 
 .btn-dark {

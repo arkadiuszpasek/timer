@@ -20,8 +20,8 @@ const QuickStart = () => (
       <TimeCard time={10} unit="m" />
     </div>
     <Link to="/">
-      <div className="btn btn-primary wide-btn mt-big">
-        Click here to go to main page and see it going!
+      <div className="btn btn-secondary wide-btn mt-big">
+        Go back to the main page and see it going!
       </div>
     </Link>
   </div>

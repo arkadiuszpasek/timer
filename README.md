@@ -2,9 +2,9 @@
 
 ### The timer was designed to allow super quick and easy time measuring
 
-#### It uses unsplash api, so that you get a random background every time!
-
 You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
+
+~~It uses unsplash api, so that you get a random background every time!~~
 
 ## How to run this project:
 

@@ -1,17 +1,23 @@
 @import '../../styles/vars';
-
-.card {
-  background-color: $primary-color;
-  border-radius: 4px;
-
-  width: 100%;
-  min-width: 80px;
-  max-width: 200px;
-  padding: 0.5rem 0;
-}
+@import '../../styles/partials/cards';
 
 .wide-btn {
   max-width: 300px;
   padding: 0.5rem 0;
   margin: 0 auto;
+}
+
+.grid {
+  margin: 1.5rem;
+  display: grid;
+  gap: 30px 30px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+
+  @media all and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media all and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

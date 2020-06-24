@@ -8,7 +8,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  color: black;
   overflow: hidden;
 }
 
@@ -18,16 +18,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: gray;
-  background-image: url('https://source.unsplash.com/1600x900/?nature,forest');
-  background-position: top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  // scale to negate the white edges
-  transform: scale(1.1);
-  filter: blur(4px) brightness(0.5);
+  background-color: #f3f3f3;
   z-index: -10;
 }
 
@@ -58,17 +49,6 @@ a {
   max-width: 80%;
   margin: 0 auto;
   padding: 1rem;
-}
-
-.grid {
-  display: grid;
-  grid-gap: 50px 50px;
-  justify-items: center;
-  grid-template-columns: repeat(2, 1fr);
-
-  @media all and (min-width: 960px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .text-center {
