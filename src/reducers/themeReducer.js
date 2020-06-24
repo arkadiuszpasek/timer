@@ -5,7 +5,7 @@ const themes = {
   dark: 'dark',
 };
 
-export default (state = themes.light, action) => {
+export default (state = themes.dark, action) => {
   switch (action.type) {
     case THEME_CHANGE:
       return action.payload;
