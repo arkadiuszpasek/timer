@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { renderTime } from './timeLogic';
+import './Timer.scss';
 
 class TimeDisplay extends React.Component {
   render() {
     const { time } = this.props;
     return (
-      <div className="">
+      <div className="time-display">
         <h1>{renderTime(time)}</h1>
       </div>
     );

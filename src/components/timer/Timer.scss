@@ -21,3 +21,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.time-display {
+  position: sticky;
+  border-radius: 5px;
+  top: 10%;
+}

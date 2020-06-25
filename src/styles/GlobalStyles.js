@@ -55,6 +55,10 @@ export default createGlobalStyle`
     }
   }
 
+  .time-display {
+    background-color: ${({ theme }) => theme.background};
+  }
+
   .modal-dialog::before {
     background-color: ${({ theme }) => theme.secondaryColor};
   }
