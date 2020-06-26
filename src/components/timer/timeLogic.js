@@ -5,8 +5,8 @@ export const renderTime = (time) => {
   let minS = minutes.toString();
   let secS = seconds.toString();
   if (hours < 10) hourS = `0${hourS}`;
-  if (minS < 10) minS = `0${minS}`;
-  if (secS < 10) secS = `0${secS}`;
+  if (minutes < 10) minS = `0${minS}`;
+  if (seconds < 10) secS = `0${secS}`;
 
   return `${hourS}:${minS}:${secS}`;
 };
