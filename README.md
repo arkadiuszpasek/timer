@@ -1,8 +1,14 @@
+![version 1.1](https://img.shields.io/static/v1?label=version&message=1.1&color=green) ![Web Version](https://img.shields.io/badge/Web%20Version-Published-green) ![GooglePlay](https://img.shields.io/badge/Google%20Play-In%20progress-orange)
+
 # Simple timer
 
 ### The timer was designed to allow super quick and easy time measuring
 
 You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
+
+## It has a mobile version with React Native
+
+The mobile version currently is a bit simplified compared to web version. Check it [here](https://github.com/arkadiuszpasek/timer-native/)
 
 ~~It uses unsplash api, so that you get a random background every time!~~
 It didn't look great with background
