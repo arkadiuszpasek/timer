@@ -13,11 +13,6 @@ The mobile version currently is a bit simplified compared to web version. Check 
 ~~It uses unsplash api, so that you get a random background every time!~~
 It didn't look great with background image
 
-## Application has its mobile version
-
-It's about to be published to Google Play, but that's currently in progress
-You can check [mobile respository](https://github.com/arkadiuszpasek/timer-native/)
-
 ### Functionalities added:
 
 - [x] Different finish sounds
