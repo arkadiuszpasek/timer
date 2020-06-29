@@ -1,4 +1,4 @@
-![version 1.1](https://img.shields.io/static/v1?label=version&message=1.1&color=green) ![Web Version](https://img.shields.io/badge/Web%20Version-Published-green) ![GooglePlay](https://img.shields.io/badge/Google%20Play-In%20progress-orange)
+![version 1.1](https://img.shields.io/static/v1?label=version&message=1.1&color=green) ![Web Version](https://img.shields.io/badge/Web%20Version-Published-green) ![GooglePlay](https://img.shields.io/badge/Google%20Play-Published-green)
 
 # Simple timer
 
@@ -6,7 +6,7 @@
 
 You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 
-## It has a mobile version with React Native
+## It has a mobile version built with React Native
 
 The mobile version currently is a bit simplified compared to web version. Check it [here](https://github.com/arkadiuszpasek/timer-native/)
 
@@ -14,6 +14,7 @@ The mobile version currently is a bit simplified compared to web version. Check 
 It didn't look great with background image
 
 ## Application has its mobile version
+
 It's about to be published to Google Play, but that's currently in progress
 You can check [mobile respository](https://github.com/arkadiuszpasek/timer-native/)
 
