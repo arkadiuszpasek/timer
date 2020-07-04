@@ -10,15 +10,12 @@ You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 
 The mobile version currently is a bit simplified compared to web version. Check it [here](https://github.com/arkadiuszpasek/timer-native/)
 
-~~It uses unsplash api, so that you get a random background every time!~~
-It didn't look great with background image
-
 ### Functionalities added:
 
 - [x] Different finish sounds
 - [x] Dark theme
 
-## How to run this project:
+## How to run this project locally:
 
 - Clone the repository and navigate there
 - Run `npm install` and if everything installed succesfully: run `npm start` to run the application
@@ -32,4 +29,5 @@ It didn't look great with background image
 - node-sass
 - styled-components, (this project was initally built with sass, but I wanted to learn styled components and make themes)
 
-### :)
+~~It uses unsplash api, so that you get a random background every time!~~
+It used to use unsplash api, but it didn't look great with background image
