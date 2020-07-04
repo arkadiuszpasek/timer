@@ -6,6 +6,8 @@
 
 You can check it [here](https://arkadiuszpasek.github.io/timer/#/)
 
+I use this timer regularly and really wanted to have a finish sound from my favorite computer game - Witcher 3. I reached out to CDP Red to askif they would allow me to use quest sound from their game and they did agree♡(part of that agreement was that I would make it clear thatthe application wasn’t made in collaboration with them nor was it sponsored by them)
+
 ## It has a mobile version built with React Native
 
 The mobile version currently is a bit simplified compared to web version. Check it [here](https://github.com/arkadiuszpasek/timer-native/)
